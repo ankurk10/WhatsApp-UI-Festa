@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/HomeScreen.dart';
+import 'package:whatsapp_clone/WelcomeScreen.dart';
+import 'package:whatsapp_clone/LoginScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Color(0xFF075E54),
           accentColor: Color(0xFF128C7E)),
-      home: HomeScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

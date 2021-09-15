@@ -22,6 +22,9 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
          // ChatList(),
           ChatList(),
+          ChatList(),
+          ChatList(),
+
         ],
       ),
     );

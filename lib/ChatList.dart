@@ -5,34 +5,51 @@ class ChatList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        radius: 30,
-      ),
-      title: Text("Ankur",
-      style: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold
-      ),
-      ),
-
-      subtitle: Row(
+    return InkWell(
+      onTap: () {},
+      child: Column(
         children: [
-          Icon(Icons.done_all),
-          SizedBox(
-            width: 3,
+          ListTile(
+            leading: CircleAvatar(
+              radius: 30,
+              child: Icon(
+                Icons.person,
+              ),
+            ),
+            title: Text("Ankur",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold
+            ),
+            ),
+
+            subtitle: Row(
+              children: [
+                Icon(Icons.done_all),
+                SizedBox(
+                  width: 3,
+                ),
+
+                Text(
+                  "Hello there",
+                  style: TextStyle(
+                    fontSize: 13
+                  ),
+                )
+
+              ],
+            ),
+            trailing: Text("12:20"),
           ),
 
-          Text(
-            "Hello there",
-            style: TextStyle(
-              fontSize: 13
+          Padding(
+            padding: const EdgeInsets.only(right: 20, left: 80),
+            child: Divider(
+              thickness: 1,
             ),
-          )
-
+          ),
         ],
       ),
-      trailing: Text("12:20"),
     );
   }
 }
