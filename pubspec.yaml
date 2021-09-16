@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  international_phone_input: ^1.0.4
+  country_code_picker: ^1.7.0
+  otp_text_field: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

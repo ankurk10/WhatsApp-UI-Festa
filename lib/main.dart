@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/HomeScreen.dart';
 import 'package:whatsapp_clone/WelcomeScreen.dart';
 import 'package:whatsapp_clone/LoginScreen.dart';
+import 'package:whatsapp_clone/OtpVerification.dart';
+import 'package:whatsapp_clone/SignUp.dart';
 
 void main() {
   runApp(MyApp());
