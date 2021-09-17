@@ -8,12 +8,10 @@ import 'package:whatsapp_clone/SignUp.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key key}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomPadding: false,
       body: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -23,137 +21,105 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              Text("Enter your phone number",
+              Text(
+                "Enter your phone number",
                 style: TextStyle(
                   color: Colors.grey[800],
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-
-
-
-
-        SizedBox(
+              SizedBox(
                 height: 10,
               ),
-
               Container(
-                margin: EdgeInsets.only(left: 20 , top: 20, right: 20),
-                child: Text("WhatsApp will send an SMS message to verify "
-                    "your phone number.",
-                style: TextStyle(
-                  fontSize: 15,
-                ),
-                ),
-              ),
-
-              SizedBox(
-                height: 50,
-              ),
-
-              CountryCodePicker(
-                initialSelection: 'IN',
-              ),
-
-              Container(
-                margin: EdgeInsets.only(left: 20 , top: 20, right: 20),
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  cursorColor: Colors.black,
-                  decoration: new InputDecoration(
-                      // border: InputBorder.none,
-                      // focusedBorder: InputBorder.none,
-                      // enabledBorder: InputBorder.none,
-                      // errorBorder: InputBorder.none,
-                      // disabledBorder: InputBorder.none,
-                      contentPadding:
-                      EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
-                      hintText: "Enter your phone number"),
-
-
-                ),
-
-
-
-              ),
-
-
-
-
-              SizedBox(
-                height: 50,
-              ),
-
-              ButtonTheme(
-                height: 40,
-                minWidth: 150,
-                child: RaisedButton(
-                  child: Text("NEXT",
-                    style: TextStyle(
-                        color: Colors.black
-                    ),
-                  ),
-                  focusColor: Colors.teal,
-                  highlightColor: Colors.yellow,
-                  color: Colors.teal,
-                  hoverColor: Colors.grey,
-                  elevation: 20,
-                  onPressed: ()
-                  {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context){
-                          return OtpVerification();
-                        }
-                    ));
-                  },
-                ),
-              ),
-
-              SizedBox(
-                height: 100,
-              ),
-
-              Container(
-                margin: EdgeInsets.only(left: 20 , top: 20, right: 20),
-                child: Text("New to WhatsApp?",
+                margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+                child: Text(
+                  "WhatsApp will send an SMS message to verify "
+                  "your phone number.",
                   style: TextStyle(
                     fontSize: 15,
                   ),
                 ),
               ),
-
               SizedBox(
-                height: 10,
+                height: 50,
               ),
-
-
+              CountryCodePicker(
+                initialSelection: 'IN',
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+                child: TextFormField(
+                  maxLength: 10,
+                  keyboardType: TextInputType.number,
+                  cursorColor: Colors.black,
+                  decoration: new InputDecoration(
+                      contentPadding: EdgeInsets.only(
+                          left: 15, bottom: 11, top: 11, right: 15),
+                      hintText: "Enter your phone number"),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
               ButtonTheme(
                 height: 40,
                 minWidth: 150,
                 child: RaisedButton(
-                  child: Text("SIGNUP",
-                    style: TextStyle(
-                        color: Colors.black
-                    ),
+                  child: Text(
+                    "NEXT",
+                    style: TextStyle(color: Colors.black),
                   ),
                   focusColor: Colors.teal,
                   highlightColor: Colors.yellow,
                   color: Colors.teal,
                   hoverColor: Colors.grey,
                   elevation: 20,
-                  onPressed: ()
-                  {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context){
-                          return SignUp();
-                        }
-                    ));
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return OtpVerification();
+                    }));
                   },
                 ),
               ),
-
-
+              SizedBox(
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+                child: Text(
+                  "New to WhatsApp?",
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ButtonTheme(
+                height: 40,
+                minWidth: 150,
+                child: RaisedButton(
+                  child: Text(
+                    "SIGNUP",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  focusColor: Colors.teal,
+                  highlightColor: Colors.yellow,
+                  color: Colors.teal,
+                  hoverColor: Colors.grey,
+                  elevation: 20,
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return SignUp();
+                    }));
+                  },
+                ),
+              ),
             ],
           ),
         ),

@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/model/ChatModel.dart';
+import 'package:whatsapp_clone/IndividualChatScreen.dart';
 
 class ChatList extends StatelessWidget {
-  const ChatList({Key key}) : super(key: key);
-
+  const ChatList({Key key, this.chatModel})  : super(key: key);
+ final ChatModel chatModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => IndividualChatScreen(chatModel: chatModel,)));
+
+      },
       child: Column(
         children: [
           ListTile(
             leading: CircleAvatar(
+              backgroundColor: Colors.white,
               radius: 30,
               child: Icon(
-                Icons.person,
+                Icons.account_circle,
+                color: Colors.blueGrey,
+                size: 60,
               ),
             ),
-            title: Text("Ankur",
+            title: Text(chatModel.name,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold
@@ -31,7 +40,7 @@ class ChatList extends StatelessWidget {
                 ),
 
                 Text(
-                  "Hello there",
+                  chatModel.message,
                   style: TextStyle(
                     fontSize: 13
                   ),
@@ -39,7 +48,7 @@ class ChatList extends StatelessWidget {
 
               ],
             ),
-            trailing: Text("12:20"),
+            trailing: Text(chatModel.time),
           ),
 
           Padding(
