@@ -20,10 +20,13 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF075E54),
         title: Text("Whatsapp"),
         actions: [
-          IconButton(icon: Icon(Icons.search), onPressed: () {}),
+          IconButton(icon: Icon(Icons.search), onPressed: () {
+            showSearch(context: context, delegate: DataSearch());
+          }),
           PopupMenuButton<String>(
             onSelected: (value) {
               print(value);
@@ -90,4 +93,45 @@ class _HomeScreenState extends State<HomeScreen>
       ),
     );
   }
+}
+
+class DataSearch extends SearchDelegate<String>
+{
+
+  final recentSearch = [
+    "Ankur", "Mohit"
+  ];
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(icon:Icon(Icons.clear), onPressed: () {}),
+    ];
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: (){},
+    );
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    throw UnimplementedError();
+  }
+
+
 }
