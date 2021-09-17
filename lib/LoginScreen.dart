@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -66,16 +66,15 @@ class LoginScreen extends StatelessWidget {
               ButtonTheme(
                 height: 40,
                 minWidth: 150,
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text(
                     "NEXT",
                     style: TextStyle(color: Colors.black),
                   ),
-                  focusColor: Colors.teal,
-                  highlightColor: Colors.yellow,
-                  color: Colors.teal,
-                  hoverColor: Colors.grey,
-                  elevation: 20,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF128C7E),
+                    elevation: 20,),
+
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
@@ -102,16 +101,15 @@ class LoginScreen extends StatelessWidget {
               ButtonTheme(
                 height: 40,
                 minWidth: 150,
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text(
                     "SIGNUP",
                     style: TextStyle(color: Colors.black),
                   ),
-                  focusColor: Colors.teal,
-                  highlightColor: Colors.yellow,
-                  color: Colors.teal,
-                  hoverColor: Colors.grey,
-                  elevation: 20,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF128C7E),
+                    elevation: 20,
+                  ),
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {

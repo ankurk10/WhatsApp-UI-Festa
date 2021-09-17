@@ -16,6 +16,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
     return Scaffold(
       backgroundColor: Colors.teal[50],
       appBar: AppBar(
+        backgroundColor: Color(0xFF075E54),
         titleSpacing: 10,
         leadingWidth: 70,
         leading: InkWell(

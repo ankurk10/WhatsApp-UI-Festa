@@ -10,7 +10,7 @@ class OtpVerification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -81,17 +81,15 @@ class OtpVerification extends StatelessWidget {
               ButtonTheme(
                 height: 40,
                 minWidth: 300,
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text("CONTINUE",
                     style: TextStyle(
                         color: Colors.black
                     ),
                   ),
-                  focusColor: Colors.teal,
-                  highlightColor: Colors.yellow,
-                  color: Colors.teal,
-                  hoverColor: Colors.grey,
-                  elevation: 20,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF128C7E),
+                    elevation: 20,),
                   onPressed: ()
                   {
                     Navigator.of(context).push(MaterialPageRoute(

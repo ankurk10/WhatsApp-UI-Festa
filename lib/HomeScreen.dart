@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF075E54),
         title: Text("Whatsapp"),
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
