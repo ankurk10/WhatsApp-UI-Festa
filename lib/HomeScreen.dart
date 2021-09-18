@@ -97,6 +97,9 @@ class _HomeScreenState extends State<HomeScreen>
 
 class DataSearch extends SearchDelegate<String>
 {
+  final Search = [
+    "Ankur", "Ram", "Mohit", "Amit"
+  ];
 
   final recentSearch = [
     "Ankur", "Mohit"
@@ -104,7 +107,9 @@ class DataSearch extends SearchDelegate<String>
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
-      IconButton(icon:Icon(Icons.clear), onPressed: () {}),
+      IconButton(icon:Icon(Icons.clear), onPressed: () {
+        query = "";
+      }),
     ];
     throw UnimplementedError();
   }
@@ -116,7 +121,9 @@ class DataSearch extends SearchDelegate<String>
         icon: AnimatedIcons.menu_arrow,
         progress: transitionAnimation,
       ),
-      onPressed: (){},
+      onPressed: (){
+        close(context, null);
+      },
     );
     throw UnimplementedError();
   }
@@ -129,7 +136,13 @@ class DataSearch extends SearchDelegate<String>
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
+    final suggestionList = query.isEmpty?recentSearch:Search;
+    return ListView.builder(itemBuilder: (context, index) => ListTile(
+      title: Text(suggestionList[index]),
+    ),
+
+      itemCount: suggestionList.length,
+    );
     throw UnimplementedError();
   }
 
