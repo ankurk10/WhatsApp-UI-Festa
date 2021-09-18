@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
 class DataSearch extends SearchDelegate<String>
 {
   final Search = [
-    "Ankur", "Ram", "Mohit", "Amit"
+    "Ankur", "Ram", "Mohit", "Amit", "Jishnu", "Akhil", "Sahil"
   ];
 
   final recentSearch = [
@@ -137,6 +137,7 @@ class DataSearch extends SearchDelegate<String>
   @override
   Widget buildSuggestions(BuildContext context) {
     final suggestionList = query.isEmpty?recentSearch:Search;
+
     return ListView.builder(itemBuilder: (context, index) => ListTile(
       title: Text(suggestionList[index]),
     ),
